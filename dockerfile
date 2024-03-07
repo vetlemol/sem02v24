@@ -10,8 +10,8 @@ RUN apt-get update \
  curl \
  git
 RUN useradd -G sudo -m -d /home/vetlemol -s /bin/bash -p "$(openssl 
-passwd -1 PASSWD)" vetlemol
-vetlemol
+passwd -1 12345)" vetlemol
+USER vetlemol
 WORKDIR /home/vetlemol
 RUN mkdir hacking \
  && cd hacking \
@@ -23,13 +23,13 @@ https://raw.githubusercontent.com/uia-worker/is105misc/master/sem01v2
 RUN git config --global user.email "vetlemol@gmail.com"
 \
  && git config --global user.name "Vetle" \
- && git config --global url."https://PAT:@github.com/".insteadOf 
+ && git config --global url."https://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:@github.com/".insteadOf 
 "https://github.com" \
  && mkdir -p github.com/vetlemol
 USER root
 RUN curl -SL https://go.dev/dl/go1.21.7.OS-ARCH.tar.gz \
  | tar xvz -C /usr/local
-USER BRUKER
+USER vetlemol
 SHELL ["/bin/bash", "-c"]
 RUN mkdir -p $HOME/go/{src,bin}
 ENV GOPATH="/home/BRUKER/go"
