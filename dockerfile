@@ -22,7 +22,7 @@ RUN git config --global user.email "vetlemol@gmail.com" \
  && git config --global url."https://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:@github.com/".insteadOf "https://github.com" \
  && mkdir -p github.com/vetlemol
 USER root
-RUN curl -SL https://go.dev/dl/go1.21.7.linux-x86_64.tar.gz \
+RUN curl -SL https://go.dev/dl/go1.21.7.linux-arm64.tar.gz \
  | tar xvz -C /usr/local
 USER vetlemol
 SHELL ["/bin/bash", "-c"]
