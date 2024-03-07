@@ -32,5 +32,5 @@ RUN curl -SL https://go.dev/dl/go1.21.7.OS-ARCH.tar.gz \
 USER vetlemol
 SHELL ["/bin/bash", "-c"]
 RUN mkdir -p $HOME/go/{src,bin}
-ENV GOPATH="/home/BRUKER/go"
+ENV GOPATH="/home/vetlemol/go"
 ENV PATH="${PATH}:${GOPATH}/bin:/usr/local/go/bin"
