@@ -16,9 +16,9 @@ RUN apt-get update \
  python3 \
  strace \
  valgrind
-RUN useradd -G sudo -m -d /home/vetlemol -s /bin/bash -p "$(openssl passwd -1 12345)" vetlemol
-USER vetlemol
-WORKDIR /home/vetlemol
+RUN useradd -G sudo -m -d /home/Vetle -s /bin/bash -p "$(openssl passwd -1 12345)" Vetle
+USER Vetle
+WORKDIR /home/Vetle
 RUN mkdir hacking \
  && cd hacking \
  && curl -SL https://raw.githubusercontent.com/uia-worker/is105misc/master/sem01v24/pawned.sh > pawned.sh \
@@ -32,10 +32,10 @@ USER root
 ARG DEBIAN_FRONTEND=noninteractive
 RUN curl -SL https://go.dev/dl/go1.21.7.linux-arm64.tar.gz \
  | tar xvz -C /usr/local
-USER vetlemol
+USER Vetle
 SHELL ["/bin/bash", "-c"]
 RUN mkdir -p $HOME/go/{src,bin}
-ENV GOPATH="/home/vetlemol/go"
+ENV GOPATH="/home/Vetle/go"
 ENV PATH="${PATH}:${GOPATH}/bin:/usr/local/go/bin"
 RUN curl --proto '=https' --tlsv1.3 https://sh.rustup.rs -sSf \ 
  | sh -s -- -y
