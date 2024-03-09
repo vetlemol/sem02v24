@@ -25,7 +25,7 @@ RUN mkdir hacking \
  && chmod 764 pawned.sh \
  && cd ..
 RUN git config --global user.email "vetlemol@gmail.com" \ 
- && git config --global user.name "Vetle" \
+ && git config --global user.name "vetlemol" \
  && git config --global url."https://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:@github.com/".insteadOf "https://github.com" \
  && mkdir -p github.com/vetlemol
 USER root
