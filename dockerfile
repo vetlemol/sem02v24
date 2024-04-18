@@ -30,7 +30,7 @@ RUN git config --global user.email "vetlemol@gmail.com" \
  && mkdir -p github.com/vetlemol
 USER root
 ARG DEBIAN_FRONTEND=noninteractive
-RUN curl -SL https://go.dev/dl/go1.21.7.linux-arm64.tar.gz \
+RUN curl -SL https://go.dev/dl/go1.22.2.darwin-amd64.tar.gz \
  | tar xvz -C /usr/local
 USER Vetle
 SHELL ["/bin/bash", "-c"]
